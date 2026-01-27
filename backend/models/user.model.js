@@ -20,9 +20,6 @@ const userModel = new mongoose.Schema({
         type: String,
         required: true
     },
-    blog_id: {
-        type: String,
-    }
 }, {timestamps: true} )
 
 

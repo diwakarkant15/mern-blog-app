@@ -63,3 +63,28 @@ export const signin = async(req, res) => {
   return res.status(500).json( {message: "Some error occured", error: e.message});
 }
 }
+
+
+const googlesignin = async(req, res)=>{
+  const {name, email, googlePhotoUrl} = req.body;
+
+  try{
+
+    const user = await User.findOne({email});
+    if(user){
+      res.status(404).json({
+        message: "User already exists"
+      })
+    }
+
+    const newUser = new User({
+      name: name,
+      email: email,
+      
+    })
+
+  }catch(e){
+
+  }
+
+}
